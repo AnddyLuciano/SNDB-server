@@ -2,7 +2,7 @@ import { ApolloServer, gql } from "apollo-server";
 import { buildFederatedSchema } from "@apollo/federation";
 import { typeDefs } from "./TypeDefs";
 import { user } from "./Resolver/query/User";
-import { organisation } from "./Resolver/query/Organisation";
+import { organisation, organisations } from "./Resolver/query/Organisation";
 import { forfait, forfaits } from "./Resolver/query/Forfait";
 
 // Résolveurs pour répondre aux requêtes
@@ -10,6 +10,7 @@ const resolvers = {
     Query: {
         user,
         organisation,
+        organisations,
         forfait,
         forfaits,
     },

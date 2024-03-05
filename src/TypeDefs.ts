@@ -23,12 +23,21 @@ export const typeDefs = gql`
         equipe_max: Int
     }
 
+    type Forfaits {
+        total: Int
+        data: [Forfait]
+    }
+
+    type Organisations {
+        total: Int
+        data: [Organisation]
+    }
+
     type Query {
         user(id: Int!): User
         organisation(id: Int!): Organisation
+        organisations: Organisations
         forfait(id: Int!): Forfait
-    }
-    type Forfaits {
-        forfaits: [Forfait!]!
+        forfaits: Forfaits
     }
 `;
